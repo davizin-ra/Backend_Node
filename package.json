@@ -1,10 +1,11 @@
 {
   "name": "backnode",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "npm install express @prisma/client dotenv",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
+    "commit": "cz",
     "release": "standard-version"
   },
   "keywords": [],
@@ -20,8 +21,10 @@
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "conventional-changelog-angular-emoji": "^0.2.2",
     "cz-conventional-changelog-emoji": "^0.1.0",
     "prisma": "^5.22.0",
+    "standard-version": "^9.5.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   },

@@ -1,0 +1,10 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 1.1.0 (2026-05-02)
+
+
+### Features
+
+* **init:** Commit inicial do projeto ([b38974f](https://github.com/davizin-ra/Backend_Node/commit/b38974fa0ea657690fb55586a7d6cb306f48eb42))
