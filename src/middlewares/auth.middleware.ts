@@ -13,10 +13,10 @@ export function authToken(
   const authHeader = req.headers['authorization'];
   const token = authHeader?.split(' ')[1];
 
-  if (!token) return res.sendStatus(401);
+  if (!token) return res.json("Acesso não autorizado.");
 
   jwt.verify(token, process.env.JWT_SECRET as string, (err, user) => {
-    if (err) return res.sendStatus(403);
+    if (err) return res.json("Token inválido.");
 
     req.user = user;
     next();
