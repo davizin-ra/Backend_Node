@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/davizin-ra/Backend_Node/compare/v1.2.0...v1.3.0) (2026-05-02)
+
+
+### Features
+
+* **auth:** Implementação de cadastro, esqueci senha, login. ([a982ce9](https://github.com/davizin-ra/Backend_Node/commit/a982ce9e026d4405cfd24e36c44551b160003b37))
+
 ## [1.2.0](https://github.com/davizin-ra/Backend_Node/compare/v1.1.1...v1.2.0) (2026-05-02)
 
 
