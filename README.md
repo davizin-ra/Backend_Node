@@ -22,3 +22,9 @@ npm install @prisma/client @prisma/adapter-mariadb dotenv
 ### Database
 
 DATABASE_URL="mysql://username:password@localhost:3306/mydb"
+
+npx tsc --init
+npx prisma init
+npx prisma generate
+npx prisma migrate dev
+npx commitizen init cz-emoji --save-dev --save-exact
