@@ -5,6 +5,10 @@ export class UserRepository {
         return prisma.users.findUnique({ where: { email } });
     }
 
+    async findById(id: number) {
+        return prisma.users.findUnique({ where: { id } });
+    }
+
     async cadastroUser(data: { email: string; senha: string }) {
         return prisma.users.create({ data });
     }

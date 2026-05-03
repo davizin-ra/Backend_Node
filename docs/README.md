@@ -1,14 +1,14 @@
 # Como usar
 
-Iniciar server 
+Iniciar server
 
-    npm run dev 
-    
+    npm run dev
+
 <div/>
 
     tsx watch src/index.ts
 
-## Prisma 
+## Prisma
 
 Atualizar DB
 
@@ -26,16 +26,18 @@ Gerar Client
 
     npx prisma generate
 
-
 ## Commitar:
 
     git add .
+
 <div/>
 
     npx cz
+
 <div/>
 
     npm run release
+
 <div/>
 
     git push

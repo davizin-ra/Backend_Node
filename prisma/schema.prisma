@@ -13,6 +13,8 @@ model users {
   email       String       @unique
   senha       String
   resetTokens resetToken[]
+  gruposId Int?
+  grupos   grupos? @relation(fields: [gruposId], references: [id])
 }
 
 model resetToken {
@@ -24,4 +26,12 @@ model resetToken {
   user      users    @relation(fields: [userId], references: [id], onUpdate: Restrict)
 
   @@index([userId], map: "resetToken_userId_fkey")
+}
+
+model grupos {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  descricao String?
+
+  users users[]
 }

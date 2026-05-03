@@ -12,20 +12,19 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', async (req, res) => {
-  try {
-    await prisma.$queryRaw`SELECT 1`;
-    
-    res.json({
-      api: 'rodando',
-      database: 'conectado'
-    });
+    try {
+        await prisma.$queryRaw`SELECT 1`;
 
-  } catch (error) {
-    res.status(500).json({
-      api: 'rodando',
-      database: 'desconectado'
-    });
-  }
+        res.json({
+            api: 'rodando',
+            database: 'conectado',
+        });
+    } catch (error) {
+        res.status(500).json({
+            api: 'rodando',
+            database: 'desconectado',
+        });
+    }
 });
 
 app.use(routes);

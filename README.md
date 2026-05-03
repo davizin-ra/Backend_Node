@@ -7,13 +7,11 @@ tsconfig
 
     npx tsc --init
 
-
 ### Criando server
 
 https://www.youtube.com/watch?v=oODlPLfnTIk&t=75s
 
-
-### Config PRISMA 
+### Config PRISMA
 
 https://www.youtube.com/watch?v=KjZ5RmrSptI
 npm install prisma @types/node --save-dev

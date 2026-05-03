@@ -1,7 +1,7 @@
 import app from './app';
 import { prisma } from './prisma/client';
 
-app.listen(3000, async() => {
+app.listen(3000, async () => {
     console.log('Servidor Rodando na porta: 3000');
 
     try {

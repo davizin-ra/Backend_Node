@@ -4,23 +4,20 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [1.3.0](https://github.com/davizin-ra/Backend_Node/compare/v1.2.0...v1.3.0) (2026-05-02)
 
-
 ### Features
 
-* **auth:** Implementação de cadastro, esqueci senha, login. ([a982ce9](https://github.com/davizin-ra/Backend_Node/commit/a982ce9e026d4405cfd24e36c44551b160003b37))
+- **auth:** Implementação de cadastro, esqueci senha, login. ([a982ce9](https://github.com/davizin-ra/Backend_Node/commit/a982ce9e026d4405cfd24e36c44551b160003b37))
 
 ## [1.2.0](https://github.com/davizin-ra/Backend_Node/compare/v1.1.1...v1.2.0) (2026-05-02)
 
-
 ### Features
 
-* **JWT token:** Introduzi JWT token e dei inicio no processamento de login ([82d5c05](https://github.com/davizin-ra/Backend_Node/commit/82d5c05dbad7eb4f8f31c68c0fb1ea7aa61733de))
+- **JWT token:** Introduzi JWT token e dei inicio no processamento de login ([82d5c05](https://github.com/davizin-ra/Backend_Node/commit/82d5c05dbad7eb4f8f31c68c0fb1ea7aa61733de))
 
 ### [1.1.1](https://github.com/davizin-ra/Backend_Node/compare/v1.1.0...v1.1.1) (2026-05-02)
 
 ## 1.1.0 (2026-05-02)
 
-
 ### Features
 
-* **init:** Commit inicial do projeto ([b38974f](https://github.com/davizin-ra/Backend_Node/commit/b38974fa0ea657690fb55586a7d6cb306f48eb42))
+- **init:** Commit inicial do projeto ([b38974f](https://github.com/davizin-ra/Backend_Node/commit/b38974fa0ea657690fb55586a7d6cb306f48eb42))

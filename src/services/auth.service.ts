@@ -90,6 +90,6 @@ export class AuthService {
             <a href="${link}">${link}</a>
         `,
         });
-        return;
+        return tok;
     }
 }
