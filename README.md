@@ -1,6 +1,8 @@
 npm install express @prisma/client dotenv
 npm i typescript @types/express ts-node --dev
 
+TypeScript + bundler (tsup / esbuild / swc)
+
 ## Configurando Pastas e arquivos
 
 tsconfig
