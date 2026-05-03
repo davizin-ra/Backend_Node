@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/davizin-ra/Backend_Node/compare/v1.3.0...v1.4.0) (2026-05-03)
+
+
+### Features
+
+* **grupos:** Adicionei a table dos grupos e fiz crud de integração de usuários. ([0db1cc3](https://github.com/davizin-ra/Backend_Node/commit/0db1cc375f2d80b0089edb84560d2f2880ab51d8))
+
 ## [1.3.0](https://github.com/davizin-ra/Backend_Node/compare/v1.2.0...v1.3.0) (2026-05-02)
 
 ### Features
