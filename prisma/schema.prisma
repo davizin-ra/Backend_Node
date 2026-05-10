@@ -3,33 +3,40 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model users {
-  id          Int          @id @default(autoincrement())
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
   nome        String?
   email       String       @unique
   senha       String
+
+  gruposId    String?      @db.ObjectId
+
+  grupos      grupos?      @relation(fields: [gruposId], references: [id])
+
   resetTokens resetToken[]
-  gruposId Int?
-  grupos   grupos? @relation(fields: [gruposId], references: [id])
 }
 
 model resetToken {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
   token     String   @unique
-  userId    Int
+
+  userId    String   @db.ObjectId
+
   expiresAt DateTime
   createdAt DateTime @default(now())
-  user      users    @relation(fields: [userId], references: [id], onUpdate: Restrict)
 
-  @@index([userId], map: "resetToken_userId_fkey")
+  user users @relation(fields: [userId], references: [id])
+
+  @@index([userId])
 }
 
 model grupos {
-  id        Int     @id @default(autoincrement())
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+
   nome      String
   descricao String?
 

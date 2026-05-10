@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.get('/', async (req, res) => {
     try {
-        await prisma.$queryRaw`SELECT 1`;
+        await prisma.$connect;
 
         res.json({
             api: 'rodando',
