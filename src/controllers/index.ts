@@ -1,2 +1,2 @@
-export { AuthController } from './auth.controller';
-export { GruposController } from './grupos.controller';
+export { AuthController } from './auth.controller.js';
+export { GruposController } from './grupos.controller.js';

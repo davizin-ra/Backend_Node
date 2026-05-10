@@ -1,5 +1,5 @@
-import { GruposRepository } from '../repositories/grupos.respository';
-import { UserRepository } from '../repositories/user.repository';
+import { GruposRepository } from '../repositories/grupos.respository.js';
+import { UserRepository } from '../repositories/user.repository.js';
 
 const repo = new GruposRepository();
 const repoU = new UserRepository();

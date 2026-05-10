@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import { UserRepository } from '../repositories/user.repository';
-import { transporter } from './mail.service';
+import { UserRepository } from '../repositories/user.repository.js';
+import { transporter } from './mail.service.js';
 import crypto from 'crypto';
 import bcrypt from 'bcrypt';
 

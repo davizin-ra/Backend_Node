@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { GruposServices } from '../services/grupos.services';
+import { GruposServices } from '../services/grupos.services.js';
 
 const serv = new GruposServices();
 

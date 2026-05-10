@@ -1,5 +1,5 @@
-import app from './app';
-import { prisma } from './prisma/client';
+import app from './app.js';
+import { prisma } from './prisma/client.js';
 
 app.listen(3000, async () => {
     console.log('Servidor Rodando na porta: 3000');

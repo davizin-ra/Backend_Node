@@ -1,4 +1,4 @@
-import { prisma } from '../prisma/client';
+import { prisma } from '../prisma/client.js';
 
 export class GruposRepository {
     async criarGrupo(data: { nome: string; descricao: string }) {
