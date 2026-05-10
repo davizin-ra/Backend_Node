@@ -1,16 +1,12 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ['src/index.ts'],
-  outDir: 'build',
-  format: ['esm'],
-  target: 'node20',
+  entry: ["src/index.ts"],
+  format: ["esm"],
+  bundle: true,
+  splitting: false,
   sourcemap: true,
   clean: true,
-  splitting: false,
-  dts: false,
-  platform: 'node',
-  shims: false,
-  treeshake: true,
-  external: ['dotenv'],
+  outDir: "dist",
+  target: "node18",
 });
