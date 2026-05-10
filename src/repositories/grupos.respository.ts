@@ -14,7 +14,12 @@ export class GruposRepository {
     }
 
     async findMembros(gruposId: string) {
-        return prisma.users.findMany({ where: { gruposId } });
+        return prisma.users.findMany({ where: { gruposId }, select: {
+            id: true,
+            nome: true,
+            email: true,
+            gruposId:true,
+        } });
     }
 
     async deleteGrupo(id: string) {

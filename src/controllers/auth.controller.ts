@@ -24,7 +24,11 @@ export class AuthController {
 
             return res.status(201).json({
                 message: 'Cadastro realizado com sucesso',
-                user: result,
+                user: {
+                    "id":result.id,
+                    "email":result.email,
+                    "nome":result.nome
+                },
             });
         } catch (error: any) {
             return res.status(400).json({
