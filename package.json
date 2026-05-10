@@ -8,11 +8,11 @@
         "build": "prisma generate && tsup",
         "commit": "cz",
         "release": "standard-version",
-        "start": "node build/index.cjs"
+        "start": "node build/index.js"
     },
     "keywords": [],
     "author": "davizin_ra",
-    "type": "module",
+    "type": "commonjs",
     "license": "ISC",
     "dependencies": {
         "@prisma/client": "^6.19.3",
