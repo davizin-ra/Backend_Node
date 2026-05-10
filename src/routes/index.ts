@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { AuthController, GruposController } from '../controllers';
+import { AuthController, GruposController } from '../controllers/index';
 import { authToken } from '../middlewares/auth.middleware';
 
 const router = Router();
