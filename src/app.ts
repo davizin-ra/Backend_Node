@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import "dotenv/config";
+import 'dotenv/config';
 import routes from './routes/index.js';
 import { prisma } from './prisma/client.js';
 

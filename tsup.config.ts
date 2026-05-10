@@ -8,4 +8,5 @@ export default defineConfig({
   clean: true,
   outDir: "build",
   target: "node18",
+  external: ['dotenv']
 });
