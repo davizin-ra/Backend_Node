@@ -5,7 +5,7 @@ export class UserRepository {
         return prisma.users.findUnique({ where: { email } });
     }
 
-    async findById(id: number) {
+    async findById(id: string) {
         return prisma.users.findUnique({ where: { id } });
     }
 
@@ -13,14 +13,14 @@ export class UserRepository {
         return prisma.users.create({ data });
     }
 
-    async senhaReset(id: number, senha: string) {
+    async senhaReset(id: string, senha: string) {
         return prisma.users.update({
             where: { id: id },
             data: { senha },
         });
     }
 
-    async tokenReset(data: { userId: number; token: string; expiresAt: Date }) {
+    async tokenReset(data: { userId: string; token: string; expiresAt: Date }) {
         return prisma.resetToken.create({ data });
     }
 
@@ -32,7 +32,7 @@ export class UserRepository {
         return prisma.resetToken.delete({ where: { token } });
     }
 
-    async deleteAllTokens(userId: number) {
+    async deleteAllTokens(userId: string) {
         return prisma.resetToken.deleteMany({ where: { userId } });
     }
 }

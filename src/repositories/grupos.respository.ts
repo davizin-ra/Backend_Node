@@ -5,19 +5,19 @@ export class GruposRepository {
         return prisma.grupos.create({ data });
     }
 
-    async atribuirGrupo(id: number, gruposId: any) {
+    async atribuirGrupo(id: string, gruposId: any) {
         return prisma.users.update({ where: { id }, data: { gruposId } });
     }
 
-    async findGrupo(id: number) {
+    async findGrupo(id: string) {
         return prisma.grupos.findUnique({ where: { id } });
     }
 
-    async findMembros(gruposId: number) {
+    async findMembros(gruposId: string) {
         return prisma.users.findMany({ where: { gruposId } });
     }
 
-    async deleteGrupo(id: number) {
+    async deleteGrupo(id: string) {
         return prisma.grupos.delete({ where: { id } });
     }
 }

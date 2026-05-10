@@ -5,7 +5,7 @@ const repo = new GruposRepository();
 const repoU = new UserRepository();
 
 export class GruposServices {
-    async criarGrupo(nome: string, descricao: string, userId: number) {
+    async criarGrupo(nome: string, descricao: string, userId: string) {
         const user = await repoU.findById(userId);
 
         if (!user) {
@@ -26,7 +26,7 @@ export class GruposServices {
         return grupo;
     }
 
-    async acharGrupo(userId: number) {
+    async acharGrupo(userId: string) {
         const user = await repoU.findById(userId);
 
         if (!user) {
@@ -42,7 +42,7 @@ export class GruposServices {
         return grupo;
     }
 
-    async acharMembros(gruposId: number) {
+    async acharMembros(gruposId: string) {
         const membros = await repo.findMembros(gruposId);
 
         if (!membros) {
@@ -52,7 +52,7 @@ export class GruposServices {
         return membros;
     }
 
-    async sairGrupo(userId: number) {
+    async sairGrupo(userId: string) {
         const user = await repoU.findById(userId);
 
         if (!user) {
@@ -77,7 +77,7 @@ export class GruposServices {
         return 'Você saiu do grupo';
     }
 
-    async atribuirGrupo(id: number, gruposId: number) {
+    async atribuirGrupo(id: string, gruposId: string) {
         const user = await repoU.findById(id);
 
         if (!user) {
