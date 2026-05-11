@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "tsx watch src/index.ts",
         "build": "prisma generate && tsup",
-        "start": "node build/index.js"
+        "start": "node dist/index.js"
     },
     "keywords": [],
     "author": "davizin_ra",
