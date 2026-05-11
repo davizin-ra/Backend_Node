@@ -26,7 +26,15 @@ export class AuthService {
             { expiresIn: '1h' }
         );
 
-        return token;
+        return {
+            user: {
+                id: user.id,
+                nome: user.nome,
+                email: user.email,
+                grupo: user.gruposId
+            },
+            token,
+        };
     }
 
     async cadastro(email: string, senha: string) {
@@ -78,7 +86,7 @@ export class AuthService {
             expiresAt: dataValidade,
         });
 
-        const link = `http://localhost:3000/reset?token=${tok}`;
+        const link = `http://localhost:5173/resetsenha?token=${tok}`;
 
         await transporter.sendMail({
             from: '"Suporte" <seuemail@gmail.com>',

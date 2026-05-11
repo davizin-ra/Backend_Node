@@ -10,7 +10,7 @@ const gruposController = new GruposController();
 
 router.post('/login', authController.login);
 router.get('/protegida', authToken, (req, res) => {
-    res.json({ message: 'Rota protegida Acessada' });
+    res.json({ success: true});
 });
 router.post('/cadastro', authController.cadastro);
 router.put('/reset', authController.resetSenha);

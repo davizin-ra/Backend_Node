@@ -84,18 +84,18 @@ export class GruposServices {
             throw new Error('Usuario não encontrado');
         }
 
-        const existeGrupo = await repo.findGrupo(gruposId);
+        const grupo = await repo.findGrupo(gruposId);
 
         if (user.gruposId) {
             throw new Error('Você ja está em um grupo');
         }
 
-        if (!existeGrupo) {
+        if (!grupo) {
             throw new Error('Grupo não encontrado');
         }
 
         await repo.atribuirGrupo(user.id, gruposId);
 
-        return 'Atribuido ao grupo ' + gruposId;
+        return 'Atribuido ao grupo ' + grupo.nome;
     }
 }
