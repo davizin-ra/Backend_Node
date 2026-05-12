@@ -14,33 +14,33 @@ export class GruposController {
                 group: result,
             });
         } catch (error: any) {
-            return res.status(401).json({ message: error.message });
+            return res.status(400).json({ message: error.message });
         }
     }
 
     async acharGrupo(req: Request, res: Response) {
         try {
-            const { userId } = req.body;
-            const result = await serv.acharGrupo(userId);
+            const { userId } = req.query as {userId:string};
+            const grupo = await serv.acharGrupo(userId);
 
             return res.json({
-                result,
+                grupo,
             });
         } catch (error: any) {
-            return res.status(401).json({ message: error.message });
+            return res.status(400).json({ message: error.message });
         }
     }
 
     async acharMembros(req: Request, res: Response) {
         try {
-            const { gruposId } = req.body;
-            const result = await serv.acharMembros(gruposId);
+            const { grupoId } = req.query as {grupoId:string};
+            const membros = await serv.acharMembros(grupoId);
 
             return res.json({
-                result,
+                membros,
             });
         } catch (error: any) {
-            return res.status(401).json({ message: error.message });
+            return res.status(400).json({ message: error.message });
         }
     }
 
@@ -53,7 +53,7 @@ export class GruposController {
                 result,
             });
         } catch (error: any) {
-            return res.status(401).json({ message: error.message });
+            return res.status(400).json({ message: error.message });
         }
     }
 
@@ -66,7 +66,7 @@ export class GruposController {
                 result,
             });
         } catch (error: any) {
-            return res.status(401).json({ message: error.message });
+            return res.status(400).json({ message: error.message });
         }
     }
 }
