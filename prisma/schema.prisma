@@ -8,23 +8,22 @@ datasource db {
 }
 
 model users {
-  id          String       @id @default(auto()) @map("_id") @db.ObjectId
-  nome        String?
-  email       String       @unique
-  senha       String
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  nome     String?
+  email    String  @unique
+  senha    String
+  gruposId String? @db.ObjectId
 
-  gruposId    String?      @db.ObjectId
-
-  grupos      grupos?      @relation(fields: [gruposId], references: [id])
+  grupos grupos? @relation(fields: [gruposId], references: [id])
 
   resetTokens resetToken[]
 }
 
 model resetToken {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  token     String   @unique
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  token String @unique
 
-  userId    String   @db.ObjectId
+  userId String @db.ObjectId
 
   expiresAt DateTime
   createdAt DateTime @default(now())
@@ -35,10 +34,144 @@ model resetToken {
 }
 
 model grupos {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(auto()) @map("_id") @db.ObjectId
 
   nome      String
   descricao String?
 
-  users users[]
+  users   users[]
+  palavra palavra[]
+  config  configGrupo[]
+}
+
+model substantivos {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  genero      Boolean
+  conteudo    String
+  significado String
+}
+
+model plural {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  tipo     String
+  itemId   String
+  regra    String
+  elemento String
+  separado String
+}
+
+model genero {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  tipo      String
+  itemId    String
+  regra     String
+  elemento  String?
+  separado  String?
+  conteudoM String?
+  conteudoF String?
+}
+
+model pronomes {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  pessoa   Int
+  plural   Boolean
+  genero   String
+  conteudo String
+}
+
+model verbo {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  conjugar    Boolean
+  tempo       Boolean
+  conteudo    String
+  significado String
+}
+
+model conjugar {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  itemId      String
+  regra       Boolean
+  pronomeId   Boolean
+  conteudo    String
+  palavraBase String
+}
+
+model tempo {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  itemId      String
+  regra       Boolean
+  pronomeId   Boolean
+  conteudo    String
+  palavraBase String
+  tempo       String
+}
+
+model adjetivo {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  genero      Boolean
+  conteudo    String
+  significado String
+}
+
+model artigo {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  genero      Boolean
+  conteudo    String
+  tipo        String
+  significado String
+}
+
+model adverbio {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  conteudo    String
+  tipo        String
+  significado String
+}
+
+model numeral {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  genero      Boolean
+  conteudo    String
+  tipo        String
+  significado String
+  quantidade  String
+}
+
+model preposicao {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  conteudo    String
+  tipo        String
+  significado String
+}
+
+model conjugacao {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  plural      Boolean
+  conteudo    String
+  tipo        String
+  significado String
+}
+
+model palavra {
+  id       String  @id @default(auto()) @map("_id") @db.ObjectId
+  tipo     String
+  itemId   String
+
+  grupos   grupos? @relation(fields: [gruposId], references: [id])
+  gruposId String? @db.ObjectId
+}
+
+model configGrupo {
+  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  pronomesP Boolean
+
+
+  grupos    grupos? @relation(fields: [gruposId], references: [id])
+  gruposId  String? @db.ObjectId
 }

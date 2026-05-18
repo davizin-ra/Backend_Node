@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { GruposServices } from '../services/grupos.services.js';
+import { GruposServices } from '../services/grupos.service.js';
 
 const serv = new GruposServices();
 
@@ -7,7 +7,7 @@ export class GruposController {
     async criarGrupo(req: Request, res: Response) {
         try {
             const { nome, descricao, userId } = req.body;
-            const result = await serv.criarGrupo(nome, descricao, userId);
+            const result = await serv.criarGrupo(nome, descricao, userId, );
 
             return res.json({
                 message: 'Grupo criado!!',
