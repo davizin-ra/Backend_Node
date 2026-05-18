@@ -11,8 +11,10 @@ export class AuthController {
             const result = await serv.login(email, senha);
 
             return res.json(result);
-        } catch (error: any) {
-            return res.status(401).json({ message: error.message });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
@@ -25,15 +27,15 @@ export class AuthController {
             return res.status(201).json({
                 message: 'Cadastro realizado com sucesso',
                 user: {
-                    "id":result.id,
-                    "email":result.email,
-                    "nome":result.nome
+                    id: result.id,
+                    email: result.email,
+                    nome: result.nome,
                 },
             });
-        } catch (error: any) {
-            return res.status(400).json({
-                message: error.message,
-            });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
@@ -47,10 +49,10 @@ export class AuthController {
                 message: 'Senha alterada com sucesso',
                 user: result.email,
             });
-        } catch (error: any) {
-            return res.status(400).json({
-                message: error.message,
-            });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
@@ -63,10 +65,10 @@ export class AuthController {
                 message: 'Requisição criada com sucesso',
                 token: result,
             });
-        } catch (error: any) {
-            return res.status(400).json({
-                message: error.message,
-            });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 }

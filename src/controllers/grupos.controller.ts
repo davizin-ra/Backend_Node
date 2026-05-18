@@ -7,40 +7,46 @@ export class GruposController {
     async criarGrupo(req: Request, res: Response) {
         try {
             const { nome, descricao, userId } = req.body;
-            const result = await serv.criarGrupo(nome, descricao, userId, );
+            const result = await serv.criarGrupo(nome, descricao, userId);
 
             return res.json({
                 message: 'Grupo criado!!',
                 group: result,
             });
-        } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
     async acharGrupo(req: Request, res: Response) {
         try {
-            const { userId } = req.query as {userId:string};
+            const { userId } = req.query as { userId: string };
             const grupo = await serv.acharGrupo(userId);
 
             return res.json({
                 grupo,
             });
-        } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
     async acharMembros(req: Request, res: Response) {
         try {
-            const { grupoId } = req.query as {grupoId:string};
+            const { grupoId } = req.query as { grupoId: string };
             const membros = await serv.acharMembros(grupoId);
 
             return res.json({
                 membros,
             });
-        } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
@@ -52,8 +58,10 @@ export class GruposController {
             return res.json({
                 result,
             });
-        } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 
@@ -65,8 +73,10 @@ export class GruposController {
             return res.json({
                 result,
             });
-        } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+        } catch (error) {
+            if (error instanceof Error) {
+                return res.status(400).json({ message: error.message });
+            }
         }
     }
 }

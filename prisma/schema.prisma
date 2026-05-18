@@ -76,7 +76,7 @@ model pronomes {
   id       String  @id @default(auto()) @map("_id") @db.ObjectId
   pessoa   Int
   plural   Boolean
-  genero   String
+  genero   String?
   conteudo String
 }
 

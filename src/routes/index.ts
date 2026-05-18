@@ -33,5 +33,6 @@ router.put('/atribuir', gruposController.atribuirGrupo);
 
 router.post('/substantivo', palavrasController.criarSubstantivo);
 router.get('/substantivo', palavrasController.findSubstantivo);
+router.post('/pronome', palavrasController.criarPronome)
 
 export default router;

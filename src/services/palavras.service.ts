@@ -4,6 +4,8 @@ import { PalavrasRepository } from '../repositories/palavras.repository.js';
 const repo = new PalavrasRepository();
 
 export class PalavrasService {
+    // substantivos
+
     async criarSubstantivo(
         plural: boolean,
         genero: boolean,
@@ -44,8 +46,6 @@ export class PalavrasService {
         return substantivo;
     }
 
-    // find
-
     async findSubstantivo(id: string) {
         const substantivo = await repo.findSubstantivo(id);
         if (substantivo.genero) {
@@ -53,5 +53,25 @@ export class PalavrasService {
             return { substantivo, genero };
         }
         return substantivo;
+    }
+
+    // pronomes
+
+    async criarPronome(
+        pessoa: number,
+        plural: boolean,
+        genero: string,
+        conteudo: string
+    ) {
+        const pronome = await repo.criarPronome({
+            pessoa,
+            plural,
+            genero,
+            conteudo,
+        });
+        if (pessoa != 3 && genero != null){
+            throw new Error('Só é possível atribuir gênero a pronomes em 1 e 2 pessoa')
+        }
+        return pronome;
     }
 }
