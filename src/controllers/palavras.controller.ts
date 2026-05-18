@@ -24,7 +24,7 @@ export class PalavrasController{
             const {id} = req.query as {id: string}
             const substantivo = await serv.findSubstantivo(id)
 
-            return res.json({substantivo})
+            return res.json(substantivo)
         } catch (error: any){
             return res.status(400).json({message:error.message})
         }
